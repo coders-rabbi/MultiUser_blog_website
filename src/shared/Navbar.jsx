@@ -10,7 +10,7 @@ const Navbar = () => {
                 <h3>MN_Blog</h3>
             </div>
             <div>
-                <button className='btn bg-[#5044E5] text-white rounded-full font-normal' >Dashboard 
+                <button className='btn bg-[#5044E5] text-white rounded-full font-normal' >Dashboard
                     <FaArrowRight />
                 </button>
             </div>
