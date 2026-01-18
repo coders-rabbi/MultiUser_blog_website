@@ -1,9 +1,14 @@
 import React from 'react';
+import { BsStars } from 'react-icons/bs';
 
 const HeroSection = () => {
     return (
         <div className='text-center mt-20'>
-            <h4 className='text-[#5044E5] bg-gradient-to-r from-blue-100 to-blue-200 border inline-block  text-[14px] px-12 rounded-full py-2 mb-8'>New: AI feature integrated</h4>
+            <div className='inline-block'>
+                <h4 className='text-[#5044E5] bg-gradient-to-r from-blue-50 to-blue-100 border  text-[14px] px-12 rounded-full py-2 mb-8 flex gap-2'>New: AI feature integrated
+                    <BsStars />
+                </h4>
+            </div>
 
             <h1 className='text-6xl font-semibold leading-16 text-gray-700 mb-10'>Your own <span className='text-[#5044E5]'>blogging</span> <br />platform.</h1>
             <p className='text-gray-500 mb-8'>This is your space to think out loud, to share what matters, and to write without filters. Whether <br /> it's one word or a thousand, your story starts right here.</p>
