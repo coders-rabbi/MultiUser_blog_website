@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo/logo.svg'
 import { FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const Navbar = () => {
     return (
@@ -9,9 +10,11 @@ const Navbar = () => {
                 <img className='w-44' src={logo} alt="" />
             </div>
             <div>
-                <button className='btn bg-[#5044E5] text-white rounded-full font-normal' >Dashboard
-                    <FaArrowRight />
-                </button>
+                <Link to="/dashboard">
+                    <button className='btn bg-[#5044E5] text-white rounded-full font-normal' >Dashboard
+                        <FaArrowRight />
+                    </button>
+                </Link>
             </div>
         </div>
     );
