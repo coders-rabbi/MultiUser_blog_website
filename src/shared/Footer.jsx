@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const Footer = () => {
     return (
-        <div className='mt-10 xl:grid grid-cols-5 px-5 xl:px-10'>
+        <div className='mt-10 xl:grid grid-cols-5 px-5 xl:px-10 bg-[#F9F9FE] py-10'>
             <div className='col-span-2 xl:pr-5'>
                 <div className='flex gap-2 items-center mb-4'>
                     <img className='w-44' src={logo} alt="" />
