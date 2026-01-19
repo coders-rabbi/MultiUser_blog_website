@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../assets/logo/logo.webp'
-
+  
 const Footer = () => {
     return (
         <div>
