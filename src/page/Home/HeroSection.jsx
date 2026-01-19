@@ -3,7 +3,7 @@ import { BsStars } from 'react-icons/bs';
 
 const HeroSection = () => {
     return (
-        <div className='text-center mt-20'>
+        <div className='text-center mt-20 '>
             <div className='inline-block'>
                 <h4 className='text-[#5044E5] bg-gradient-to-r from-blue-50 to-blue-100 border  text-[14px] px-12 rounded-full py-2 mb-8 flex gap-2'>New: AI feature integrated
                     <BsStars />

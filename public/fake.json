@@ -1,0 +1,149 @@
+{
+    "blogs": [
+        {
+            "id": 1,
+            "title": "Getting Started with React.js",
+            "slug": "getting-started-with-react",
+            "excerpt": "Learn the basics of React.js and how to build your first component.",
+            "content": "React is a popular JavaScript library for building user interfaces. It allows developers to create reusable UI components...",
+            "author": {
+                "name": "Rabbi Mia",
+                "avatar": "https://i.pravatar.cc/150?img=3"
+            },
+            "category": "Technology",
+            "tags": [
+                "React",
+                "JavaScript",
+                "Frontend"
+            ],
+            "thumbnail": "https://picsum.photos/400/250?random=1",
+            "image": "https://picsum.photos/1200/600?random=11",
+            "publishedDate": "2025-01-10",
+            "readingTime": "5 min read",
+            "views": 1200,
+            "likes": 340,
+            "comments": 12
+        },
+        {
+            "id": 2,
+            "title": "Understanding Express.js Middleware",
+            "slug": "express-middleware-guide",
+            "excerpt": "A complete guide to middleware in Express.js with real examples.",
+            "content": "Middleware functions are functions that have access to the request and response objects in Express...",
+            "author": {
+                "name": "Rabbi Mia",
+                "avatar": "https://i.pravatar.cc/150?img=5"
+            },
+            "category": "Technology",
+            "tags": [
+                "Express.js",
+                "Node.js",
+                "Backend"
+            ],
+            "thumbnail": "https://picsum.photos/400/250?random=2",
+            "image": "https://picsum.photos/1200/600?random=12",
+            "publishedDate": "2025-01-15",
+            "readingTime": "7 min read",
+            "views": 980,
+            "likes": 210,
+            "comments": 8
+        },
+        {
+            "id": 3,
+            "title": "MERN Stack Project Structure Best Practices",
+            "slug": "mern-project-structure",
+            "excerpt": "Learn how to properly structure your MERN stack applications.",
+            "content": "A clean project structure helps you scale your MERN applications easily...",
+            "author": {
+                "name": "Rabbi Mia",
+                "avatar": "https://i.pravatar.cc/150?img=7"
+            },
+            "category": "Technology",
+            "tags": [
+                "MERN",
+                "MongoDB",
+                "React",
+                "Node"
+            ],
+            "thumbnail": "https://picsum.photos/400/250?random=3",
+            "image": "https://picsum.photos/1200/600?random=13",
+            "publishedDate": "2025-01-20",
+            "readingTime": "6 min read",
+            "views": 1500,
+            "likes": 420,
+            "comments": 20
+        },
+        {
+            "id": 4,
+            "title": "The Rise of Robotics in Industry",
+            "slug": "rise-of-robotics",
+            "excerpt": "Discover how robotics are transforming modern industries and manufacturing.",
+            "content": "Robots are increasingly being used in factories, warehouses, and even healthcare settings...",
+            "author": {
+                "name": "Rabbi Mia",
+                "avatar": "https://i.pravatar.cc/150?img=8"
+            },
+            "category": "Robotics",
+            "tags": [
+                "Robotics",
+                "AI",
+                "Automation"
+            ],
+            "thumbnail": "https://picsum.photos/400/250?random=4",
+            "image": "https://picsum.photos/1200/600?random=14",
+            "publishedDate": "2025-01-22",
+            "readingTime": "8 min read",
+            "views": 800,
+            "likes": 150,
+            "comments": 10
+        },
+        {
+            "id": 5,
+            "title": "Exploring the Mysteries of Space",
+            "slug": "exploring-space",
+            "excerpt": "A journey into space exploration, from the Moon to Mars and beyond.",
+            "content": "Space exploration has fascinated humans for decades, pushing the boundaries of technology and science...",
+            "author": {
+                "name": "Rabbi Mia",
+                "avatar": "https://i.pravatar.cc/150?img=9"
+            },
+            "category": "Science",
+            "tags": [
+                "Space",
+                "Astronomy",
+                "Research"
+            ],
+            "thumbnail": "https://picsum.photos/400/250?random=5",
+            "image": "https://picsum.photos/1200/600?random=15",
+            "publishedDate": "2025-01-25",
+            "readingTime": "10 min read",
+            "views": 2200,
+            "likes": 600,
+            "comments": 35
+        },
+        {
+            "id": 6,
+            "title": "Health Tips for a Better Lifestyle",
+            "slug": "health-tips-lifestyle",
+            "excerpt": "Simple and effective ways to improve your health and wellbeing.",
+            "content": "Maintaining a healthy lifestyle is crucial. Eating well, exercising, and managing stress are key factors...",
+            "author": {
+                "name": "Rabbi Mia",
+                "avatar": "https://i.pravatar.cc/150?img=10"
+            },
+            "category": "Health",
+            "tags": [
+                "Wellness",
+                "Nutrition",
+                "Fitness"
+            ],
+            "thumbnail": "https://picsum.photos/400/250?random=6",
+            "image": "https://picsum.photos/1200/600?random=16",
+            "publishedDate": "2025-01-28",
+            "readingTime": "6 min read",
+            "views": 1400,
+            "likes": 350,
+            "comments": 18
+        }
+    ]
+}
