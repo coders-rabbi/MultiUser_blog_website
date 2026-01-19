@@ -28,7 +28,7 @@ const Blogs = () => {
             : blogs.filter((blog) => blog.category === activeTab);
 
     return (
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 pt-10">
             {/* Tabs */}
             <div className="flex gap-6 justify-center mb-10">
                 {categories.map((cat) => (
