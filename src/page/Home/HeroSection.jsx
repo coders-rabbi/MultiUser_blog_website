@@ -14,7 +14,7 @@ const HeroSection = () => {
             <p className='text-gray-500 mb-8'>This is your space to think out loud, to share what matters, and to write without filters. Whether <br /> it's one word or a thousand, your story starts right here.</p>
 
             <div className="join">
-                <input className='border focus:outline-none px-4 rounded' type="text" placeholder='Search for blogs' />
+                <input className='border focus:outline-none w-[250px] xl:w-[400px] px-4 rounded text-black' type="text" placeholder='Search for blogs' />
                 <button className="btn btn-neutral join-item bg-[#5044E5] border-none">Search</button>
             </div>
         </div>

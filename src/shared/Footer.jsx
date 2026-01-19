@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo/logo.webp'
+import logo from '../assets/logo/logo.svg'
 import { Link } from 'react-router';
 
 const Footer = () => {
@@ -7,8 +7,7 @@ const Footer = () => {
         <div className='mt-10 xl:grid grid-cols-5 px-5 xl:px-10'>
             <div className='col-span-2 xl:pr-5'>
                 <div className='flex gap-2 items-center mb-4'>
-                    <img className='w-20' src={logo} alt="" />
-                    <p className='text-2xl text-black'>MN_Blog</p>
+                    <img className='w-44' src={logo} alt="" />
                 </div>
                 <p className='text-gray-700 text-[17px]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum unde quaerat eveniet cumque accusamus atque qui error quo enim fugiat?</p>
             </div>
