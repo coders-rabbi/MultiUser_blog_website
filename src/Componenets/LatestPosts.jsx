@@ -5,7 +5,7 @@ import SingleTableData from './SingleTableData';
 
 const LatestPosts = () => {
 
-    const { data, isLoading } = useQuery({
+    const { data, isLoading, refetch } = useQuery({
         queryKey: ["blogs"],
         queryFn: async () => {
             const res = await fetch("http://localhost:5000/posts");
@@ -43,6 +43,7 @@ const LatestPosts = () => {
                                 <SingleTableData
                                     key={index}
                                     post={post}
+                                    refetch={refetch}
                                 />
                             ))
                         }
