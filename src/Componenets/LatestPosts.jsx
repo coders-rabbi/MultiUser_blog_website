@@ -8,17 +8,15 @@ const LatestPosts = () => {
     const { data, isLoading } = useQuery({
         queryKey: ["blogs"],
         queryFn: async () => {
-            const res = await fetch("fake.json");
+            const res = await fetch("http://localhost:5000/posts");
             return res.json();
         }
     });
 
-    if (isLoading) {
-        return <p>Loading...</p>;
-    }
 
-    const posts = data.blogs;
-    console.log(posts)
+    if (isLoading) return <p className="text-xl text-center mt-10">Loading...</p>;
+
+    const posts = data;
 
     return (
         <div className='py-5'>
@@ -28,8 +26,8 @@ const LatestPosts = () => {
             </div>
 
             {/* post table */}
-            <div className='bg-white mt-5 shadow rounded'>
-                <table className='table py-4'>
+            <div className='bg-white p-8 shadow rounded mt-10'>
+                <table className='table'>
                     <thead>
                         <tr>
                             <th>#</th>
@@ -41,7 +39,7 @@ const LatestPosts = () => {
                     </thead>
                     <tbody>
                         {
-                            data.blogs.map((post, index) => (
+                            posts.map((post, index) => (
                                 <SingleTableData
                                     key={index}
                                     post={post}

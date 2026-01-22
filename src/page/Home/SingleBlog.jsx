@@ -2,6 +2,11 @@ import React from 'react';
 
 const SingleBlog = ({ blogs }) => {
     const { id, category, title, thumbnail, excerpt } = blogs;
+
+    const image = thumbnail
+        ? thumbnail
+        : "`http://localhost:5000/uploads/${thumbnail}`";
+
     return (
         <div>
             <div
@@ -9,9 +14,9 @@ const SingleBlog = ({ blogs }) => {
                 className="bg-white rounded-xl shadow hover:shadow-lg transition"
             >
                 <img
-                    src={thumbnail}
-                    alt={title}
-                    className="rounded-t-xl h-48 w-full object-cover"
+                    src={image}
+                alt={title}
+                className="rounded-t-xl h-48 w-full object-cover"
                 />
 
                 <div className="p-5">

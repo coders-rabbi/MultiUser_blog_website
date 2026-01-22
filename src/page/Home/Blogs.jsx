@@ -12,15 +12,15 @@ const Blogs = () => {
     const { data, isLoading } = useQuery({
         queryKey: ["blogs"],
         queryFn: async () => {
-            const res = await fetch("/fake.json");
+            const res = await fetch("http://localhost:5000/posts");
             return res.json();
         }
     });
 
 
-    if (isLoading) return <p className="text-xl">Loading...</p>;
+    if (isLoading) return <p className="text-xl text-center mt-10">Loading...</p>;
 
-    const blogs = data.blogs;
+    const blogs = data;
 
     const filteredBlogs =
         activeTab === "All"
