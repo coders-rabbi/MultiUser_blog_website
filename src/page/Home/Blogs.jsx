@@ -9,7 +9,7 @@ const Blogs = () => {
 
     const categories = ["All", "Technology", "Robotics", "Science", "Health"];
 
-    const { data, isLoading } = useQuery({
+    const { data, isLoading, refetch } = useQuery({
         queryKey: ["blogs"],
         queryFn: async () => {
             const res = await fetch("http://localhost:5000/posts");

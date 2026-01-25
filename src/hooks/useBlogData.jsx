@@ -1,16 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 
-const fetchBlog = async () => {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+const fetchPosts = async () => {
+    const res = await fetch("http://localhost:5000/posts");
+
+    if (!res.ok) {
+        throw new Error("Failed to fetch posts");
+    }
+
     return res.json();
 };
 
-const UseBlogData = () => {
+const usePosts = () => {
     return useQuery({
-        queryKey: ["blogs"],
-        queryFn: fetchBlog
+        queryKey: ["posts"],
+        queryFn: fetchPosts,
     });
 };
 
-export default UseBlogData;
-
+export default usePosts;

@@ -1,23 +1,16 @@
-import React from 'react';
-import { IoMdClose } from 'react-icons/io';
 import Swal from 'sweetalert2';
 
 const SingleTableData = ({ post, refetch }) => {
-    const { id, category, title, thumbnail, excerpt, status } = post;
+    const { _id, category, title, thumbnail, excerpt, status, id } = post;
 
 
-    const handlePostStatus = (status) => {
-        const selectedPastId = selectedParcels.map((id) => id);
-        const updateData = {
-            ids: selectedPastId,
-            status: status,
-        };
-        fetch(`http://localhost:5000/posts`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(updateData),
+    const handlePostStatus = (status, _id) => {
+        console.log(status, _id);
+        const statusUpdate = { status };
+        fetch(`http://localhost:5000/posts/update_status/${_id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(statusUpdate)
         })
             .then((res) => res.json())
             .then((data) => {
@@ -28,14 +21,8 @@ const SingleTableData = ({ post, refetch }) => {
                         icon: "success",
                         confirmButtonText: "Ok",
                     });
-                    // Clear the selected parcels after successful status update
-                    setSelectedParcels([]);
                 }
                 refetch();
-            })
-            .catch((error) => {
-                console.error(error);
-                // Handle error if any
             });
     };
 
@@ -47,9 +34,16 @@ const SingleTableData = ({ post, refetch }) => {
             <td className='text-green-600 text-[16px]'>{status}</td>
             <div>
                 <td>
-                    <span className='border py-1 px-2 rounded text-gray-500'>Unpublished</span>
+                    <fieldset className="fieldset">
+                        <select defaultValue="Pick a browser" className="select">
+
+                            <option className='text-warning'>{status}</option>
+                            <option onClick={() => handlePostStatus('published', _id)}>published</option>
+                            <option onClick={() => handlePostStatus('pending', _id)}>Pending</option>
+                            <option onClick={() => handlePostStatus('reject', _id)}>Reject</option>
+                        </select>
+                    </fieldset>
                 </td>
-                <td className='bg-red-100 rounded-full border text-xs' handlePost><IoMdClose /></td>
             </div>
         </tr>
     );

@@ -22,6 +22,17 @@ const AdminOverView = () => {
                     </div>
                 </Link>
 
+
+                <Link to="pending_post">
+                    <div className='shadow rounded p-8 flex items-center justify-center gap-5' id='Total_Post'>
+                        <RiPassPendingLine className='text-3xl text-[#5F6FFF]' />
+                        <div>
+                            <p>12</p>
+                            <button className='text-gray-400'>Pending Post</button>
+                        </div>
+                    </div>
+                </Link>
+
                 <Link>
                     <div className='shadow rounded p-8 flex items-center justify-center gap-5' id='Total_Post'>
                         <CgCloseR className='text-3xl text-[#5F6FFF]' />
@@ -32,15 +43,6 @@ const AdminOverView = () => {
                     </div>
                 </Link>
 
-                <Link>
-                    <div className='shadow rounded p-8 flex items-center justify-center gap-5' id='Total_Post'>
-                        <RiPassPendingLine className='text-3xl text-[#5F6FFF]' />
-                        <div>
-                            <p>12</p>
-                            <button className='text-gray-400'>Pending Post</button>
-                        </div>
-                    </div>
-                </Link>
 
                 <Link to="comments">
                     <div className='shadow rounded p-8 flex items-center justify-center gap-5' id='Total_Post'>

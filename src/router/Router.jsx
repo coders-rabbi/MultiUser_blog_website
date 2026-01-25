@@ -6,6 +6,7 @@ import CreatePost from "../dashboard/CreatePost/CreatePost";
 import AdminOverView from "../dashboard/Admin/AdminOverView";
 import All_Member from "../dashboard/All_Member/All_Member";
 import Comments from "../dashboard/Comments/Comments";
+import PendingPost from "../dashboard/PendingPost/PendingPost";
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
                     }, {
                         path: "comments",
                         Component: Comments
+                    },
+                    {
+                        path: "pending_post",
+                        Component: PendingPost
                     }
                 ]
             },
