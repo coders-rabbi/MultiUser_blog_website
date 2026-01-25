@@ -7,9 +7,6 @@ const PendingPost = () => {
 
     if (isLoading) return <p className="text-xl text-center mt-10">Loading...</p>;
 
-
-
-
     return (
         <div>
             <h1 className='text-xl font-semibold mt-8'>Pending Posts</h1>

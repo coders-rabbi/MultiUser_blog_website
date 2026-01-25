@@ -7,6 +7,7 @@ import AdminOverView from "../dashboard/Admin/AdminOverView";
 import All_Member from "../dashboard/All_Member/All_Member";
 import Comments from "../dashboard/Comments/Comments";
 import PendingPost from "../dashboard/PendingPost/PendingPost";
+import RejectPost from "../dashboard/RejectPost/RejectPost";
 
 export const router = createBrowserRouter([
     {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
                     {
                         path: "pending_post",
                         Component: PendingPost
+                    },
+                    {
+                        path: "reject_posts",
+                        Component: RejectPost
                     }
                 ]
             },

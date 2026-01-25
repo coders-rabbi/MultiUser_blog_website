@@ -2,21 +2,14 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { FaSignsPost } from 'react-icons/fa6';
 import SingleTableData from './SingleTableData';
+import usePosts from '../hooks/useBlogData';
 
 const LatestPosts = () => {
-
-    const { data, isLoading, refetch } = useQuery({
-        queryKey: ["blogs"],
-        queryFn: async () => {
-            const res = await fetch("http://localhost:5000/posts");
-            return res.json();
-        }
-    });
+    const { data: posts, isLoading, isError, error, refetch } = usePosts();
 
 
     if (isLoading) return <p className="text-xl text-center mt-10">Loading...</p>;
 
-    const posts = data;
 
     return (
         <div className='py-5'>

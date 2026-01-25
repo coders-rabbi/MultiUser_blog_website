@@ -33,7 +33,7 @@ const AdminOverView = () => {
                     </div>
                 </Link>
 
-                <Link>
+                <Link to="reject_posts">
                     <div className='shadow rounded p-8 flex items-center justify-center gap-5' id='Total_Post'>
                         <CgCloseR className='text-3xl text-[#5F6FFF]' />
                         <div>
