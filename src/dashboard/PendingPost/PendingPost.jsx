@@ -7,6 +7,8 @@ const PendingPost = () => {
 
     if (isLoading) return <p className="text-xl text-center mt-10">Loading...</p>;
 
+    const pending_posts = posts.filter(post => post.status === "pending") || [];
+
     return (
         <div>
             <h1 className='text-xl font-semibold mt-8'>Pending Posts</h1>
@@ -23,7 +25,7 @@ const PendingPost = () => {
                     </thead>
                     <tbody>
                         {
-                            posts.map((post, index) => (
+                            pending_posts.map((post, index) => (
                                 <SingleTableData
                                     key={index}
                                     post={post}

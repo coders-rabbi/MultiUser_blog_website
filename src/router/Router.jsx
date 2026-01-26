@@ -8,6 +8,8 @@ import All_Member from "../dashboard/All_Member/All_Member";
 import Comments from "../dashboard/Comments/Comments";
 import PendingPost from "../dashboard/PendingPost/PendingPost";
 import RejectPost from "../dashboard/RejectPost/RejectPost";
+import Login from "../Componenets/Login/Login";
+import Register from "../Componenets/Register/Register";
 
 export const router = createBrowserRouter([
     {
@@ -17,6 +19,14 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home
+            },
+            {
+                path: "login",
+                Component: Login
+            },
+            {
+                path: "register",
+                Component: Register
             },
 
             //Admin Dashboard Routes
@@ -47,7 +57,7 @@ export const router = createBrowserRouter([
                     {
                         path: "reject_posts",
                         Component: RejectPost
-                    }
+                    },
                 ]
             },
         ],

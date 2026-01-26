@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CgCloseR } from 'react-icons/cg';
 import { GoCommentDiscussion } from 'react-icons/go';
 import { LuListTodo } from 'react-icons/lu';
@@ -10,11 +10,17 @@ import { MdOutlineAttachMoney, MdOutlineDashboard, MdVerified } from 'react-icon
 import { AiFillShopping } from 'react-icons/ai';
 import { FaHistory } from 'react-icons/fa';
 import { FiSettings } from 'react-icons/fi';
+import { AuthContext } from '../authProvider/AuthProvider';
 
 const Dashboard = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+
+    console.log("Dashboard User:", user);
+
     const userInfo = null;
     const profile = null;
+
     return (
         <div>
             <div className="drawer lg:drawer-open md:gap-10 px-4 md:px-0 bg-[#F6FAFE]">
@@ -46,7 +52,7 @@ const Dashboard = () => {
                                         <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={profile} alt="" />
                                     </>
                             }
-                            <h1 className="text-3xl text-center mt-3 font-semibold">{userInfo?.name}</h1>
+                            <h1 className="text-3xl text-center mt-3 font-semibold">{user?.email}</h1>
                             <h4 className="text-xl font-semibold mt-4 flex gap-2 items-center justify-center">{userInfo?.role}<MdVerified className="text-success" /></h4>
                         </div>
                         <div className="h-100vh font-pppins px-5 text-xl">

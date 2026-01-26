@@ -8,7 +8,7 @@ const RejectPost = () => {
     if (isLoading) return <p className="text-xl text-center mt-10">Reject Loading...</p>;
 
     const reject_posts = posts.filter(post => post.status === "reject") || [];
-    console.log(reject_posts)
+    // console.log(reject_posts) 
 
     return (
         <div className='py-10'>
