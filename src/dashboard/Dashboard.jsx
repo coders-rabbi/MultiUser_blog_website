@@ -23,6 +23,8 @@ const Dashboard = () => {
 
     const loggedUserData = userInfo?.find(u => u.email === loggedUser);
 
+    const loggedUserRole = loggedUserData?.role;
+
 
     const menuClass = ({ isActive }) =>
         isActive
@@ -68,33 +70,64 @@ const Dashboard = () => {
                         </div>
                         <div className="h-100vh font-pppins px-5 text-xl">
                             <div className="flex flex-col gap-2">
-                                <li>
-                                    <NavLink to="/dashboard" end className={menuClass}>
-                                        <MdOutlineDashboard />
-                                        Dashboard
-                                    </NavLink>
-                                </li>
 
-                                <li>
-                                    <NavLink to="/dashboard/create_post" className={menuClass}>
-                                        <AiFillShopping />
-                                        Create Post
-                                    </NavLink>
-                                </li>
 
-                                <li>
-                                    <NavLink to="/dashboard/all_members" className={menuClass}>
-                                        <FaHistory />
-                                        All Members
-                                    </NavLink>
-                                </li>
+                                {
+                                    loggedUserRole === 'admin' ?
+                                        <>
+                                            <li>
+                                                <NavLink to="/dashboard" end className={menuClass}>
+                                                    <MdOutlineDashboard />
+                                                    Dashboard
+                                                </NavLink>
+                                            </li>
 
-                                <li>
-                                    <NavLink to="/dashboard/comments" className={menuClass}>
-                                        <MdOutlineAttachMoney />
-                                        Comments
-                                    </NavLink>
-                                </li>
+                                            <li>
+                                                <NavLink to="/dashboard/create_post" className={menuClass}>
+                                                    <AiFillShopping />
+                                                    Create Post
+                                                </NavLink>
+                                            </li>
+
+                                            <li>
+                                                <NavLink to="/dashboard/all_members" className={menuClass}>
+                                                    <FaHistory />
+                                                    All Members
+                                                </NavLink>
+                                            </li>
+
+                                            <li>
+                                                <NavLink to="/dashboard/comments" className={menuClass}>
+                                                    <MdOutlineAttachMoney />
+                                                    Comments
+                                                </NavLink>
+                                            </li>
+
+                                        </>
+                                        :
+                                        <>
+                                            <li>
+                                                <NavLink to="/dashboard" end className={menuClass}>
+                                                    <MdOutlineDashboard />
+                                                    Dashboard
+                                                </NavLink>
+                                            </li>
+
+                                            <li>
+                                                <NavLink to="/dashboard/create_post" className={menuClass}>
+                                                    <AiFillShopping />
+                                                    Create Post
+                                                </NavLink>
+                                            </li>
+                                            <li>
+                                                <NavLink to="/dashboard/comments" className={menuClass}>
+                                                    <MdOutlineAttachMoney />
+                                                    Comments
+                                                </NavLink>
+                                            </li>
+
+                                        </>
+                                }
 
                                 <li>
                                     <button
