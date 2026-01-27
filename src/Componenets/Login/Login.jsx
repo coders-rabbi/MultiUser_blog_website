@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../authProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router';
 
 const Login = () => {
     const { login, googleLogin } = useContext(AuthContext);
@@ -69,6 +70,8 @@ const Login = () => {
                 >
                     Continue with Google
                 </button>
+                <div className="divider">Sign Up</div>
+                <Link to="/register" className="btn btn-outline btn-secondary w-full mt-2">Sign Up</Link>
             </div>
         </div>
     );

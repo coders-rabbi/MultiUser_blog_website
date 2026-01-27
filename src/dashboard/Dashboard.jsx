@@ -3,7 +3,7 @@ import { CgCloseR } from 'react-icons/cg';
 import { GoCommentDiscussion } from 'react-icons/go';
 import { LuListTodo } from 'react-icons/lu';
 import { RiPassPendingLine } from 'react-icons/ri';
-import { Link, Outlet } from 'react-router';
+import { Link, NavLink, Outlet } from 'react-router';
 import LastPost from '../Componenets/LatestPosts';
 import { FaBars } from 'react-icons/fa6';
 import { MdOutlineAttachMoney, MdOutlineDashboard, MdVerified } from 'react-icons/md';
@@ -11,6 +11,7 @@ import { AiFillShopping } from 'react-icons/ai';
 import { FaHistory } from 'react-icons/fa';
 import { FiSettings } from 'react-icons/fi';
 import { AuthContext } from '../authProvider/AuthProvider';
+import { GiExitDoor } from 'react-icons/gi';
 
 const Dashboard = () => {
 
@@ -18,8 +19,16 @@ const Dashboard = () => {
 
     console.log("Dashboard User:", user);
 
+    //temporary uses
     const userInfo = null;
     const profile = null;
+
+
+    const menuClass = ({ isActive }) =>
+        isActive
+            ? "text-white bg-primary flex items-center gap-2 px-4 py-2 rounded"
+            : "text-gray-500 flex items-center gap-2 px-4 py-2 hover:bg-gray-100 rounded";
+
 
     return (
         <div>
@@ -58,25 +67,43 @@ const Dashboard = () => {
                         <div className="h-100vh font-pppins px-5 text-xl">
                             <div className="flex flex-col gap-2">
                                 <li>
-                                    <Link to="">
+                                    <NavLink to="/dashboard" end className={menuClass}>
                                         <MdOutlineDashboard />
-                                        Dashboard</Link>
+                                        Dashboard
+                                    </NavLink>
                                 </li>
+
                                 <li>
-                                    <Link to="create_post">
+                                    <NavLink to="/dashboard/create_post" className={menuClass}>
                                         <AiFillShopping />
-                                        Create Post</Link>
+                                        Create Post
+                                    </NavLink>
                                 </li>
+
                                 <li>
-                                    <Link to="/dashboard/all_members">
+                                    <NavLink to="/dashboard/all_members" className={menuClass}>
                                         <FaHistory />
-                                        All Memebers</Link>
+                                        All Members
+                                    </NavLink>
                                 </li>
+
                                 <li>
-                                    <Link to="/dashboard/comments">
+                                    <NavLink to="/dashboard/comments" className={menuClass}>
                                         <MdOutlineAttachMoney />
-                                        Comments</Link>
+                                        Comments
+                                    </NavLink>
                                 </li>
+
+                                <li>
+                                    <button
+                                        className="text-red-500 flex items-center gap-2 px-4 py-2 rounded hover:bg-red-50"
+                                        onClick={logOut}
+                                    >
+                                        <GiExitDoor />
+                                        Logout
+                                    </button>
+                                </li>
+
                             </div>
                         </div>
                     </ul>

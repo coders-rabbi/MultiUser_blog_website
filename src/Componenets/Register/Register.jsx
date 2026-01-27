@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../authProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router';
 
 const Register = () => {
     const { createAccount, googleLogin } = useContext(AuthContext);
@@ -43,7 +44,9 @@ const Register = () => {
                         <label className="label">Password</label>
                         <input name="password" type="password" className="input w-full" placeholder="Password" required />
 
-                        <div><a className="link link-hover">Forgot password?</a></div>
+                        <div>
+                            <Link to="/login" className="link link-hover">Already have an account? Login</Link>
+                        </div>
 
                         <button type="submit" className="btn btn-neutral mt-4 w-full">Register</button>
                     </fieldset>
