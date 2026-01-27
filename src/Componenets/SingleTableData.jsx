@@ -1,8 +1,19 @@
 import Swal from 'sweetalert2';
+import useUserData from '../hooks/useUserData';
+import { AuthContext } from '../authProvider/AuthProvider';
+import { useContext } from 'react';
+import { MdDeleteForever } from 'react-icons/md';
+import { TiDelete } from 'react-icons/ti';
 
 const SingleTableData = ({ post, refetch }) => {
     const { _id, category, title, thumbnail, excerpt, status, id } = post;
+    const { data: userInfo } = useUserData();
+    const { user } = useContext(AuthContext);
 
+
+    const loggedUserData = userInfo?.find(u => u.email === user?.email);
+    const loggedUserRole = loggedUserData?.role;
+    // console.log(loggedUserRole);
 
     const handlePostStatus = (status, _id) => {
         console.log(status, _id);
@@ -33,17 +44,26 @@ const SingleTableData = ({ post, refetch }) => {
             <td>12-05-2026</td>
             <td className='text-green-600 text-[16px]'>{status}</td>
             <div>
-                <td>
-                    <fieldset className="fieldset">
-                        <select defaultValue="Pick a browser" className="select">
+                {
+                    loggedUserRole === 'admin' ?
+                        <td>
+                            <fieldset className="fieldset">
+                                <select defaultValue="Pick a browser" className="select">
 
-                            <option className='text-warning'>{status}</option>
-                            <option onClick={() => handlePostStatus('published', _id)}>published</option>
-                            <option onClick={() => handlePostStatus('pending', _id)}>Pending</option>
-                            <option onClick={() => handlePostStatus('reject', _id)}>Reject</option>
-                        </select>
-                    </fieldset>
-                </td>
+                                    <option className='text-warning'>{status}</option>
+                                    <option onClick={() => handlePostStatus('published', _id)}>published</option>
+                                    <option onClick={() => handlePostStatus('pending', _id)}>Pending</option>
+                                    <option onClick={() => handlePostStatus('reject', _id)}>Reject</option>
+                                </select>
+                            </fieldset>
+                        </td>
+                        :
+                        <td className='text-[16px]'>
+                            <TiDelete className='text-red-400 w-10 h-10 rounded-full ' />
+                        </td>
+
+                }
+
             </div>
         </tr>
     );

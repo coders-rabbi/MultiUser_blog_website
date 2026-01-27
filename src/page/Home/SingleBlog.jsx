@@ -3,6 +3,7 @@ import React from 'react';
 const SingleBlog = ({ blogs }) => {
     const { id, category, title, thumbnail, excerpt } = blogs;
 
+
     const image = thumbnail
         ? thumbnail
         : "`http://localhost:5000/uploads/${thumbnail}`";
@@ -15,8 +16,8 @@ const SingleBlog = ({ blogs }) => {
             >
                 <img
                     src={image}
-                alt={title}
-                className="rounded-t-xl h-48 w-full object-cover"
+                    alt={title}
+                    className="rounded-t-xl h-48 w-full object-cover"
                 />
 
                 <div className="p-5">
