@@ -5,22 +5,22 @@ import {
     GoogleAuthProvider,
     signInWithEmailAndPassword,
     signInWithPopup,
-    onAuthStateChanged, // এটি যোগ করা হয়েছে
+    onAuthStateChanged,
     signOut
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
-// ১. Context তৈরি করুন
+
 export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null); // অ্যারে [] এর বদলে null ব্যবহার করুন
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // ২. গুগলের মাধ্যমে লগইন
+
     const googleLogin = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
@@ -40,7 +40,7 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     };
 
-    // ৩. ইউজারের অবস্থা পর্যবেক্ষণ (Observer)
+
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -58,7 +58,6 @@ const AuthProvider = ({ children }) => {
         logOut
     };
 
-    // ৪. সঠিক রিটার্ন পদ্ধতি
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

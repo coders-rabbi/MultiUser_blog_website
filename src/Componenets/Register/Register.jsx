@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../authProvider/AuthProvider';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router';
+import { Link, Navigate } from 'react-router';
 
 const Register = () => {
     const { createAccount, googleLogin } = useContext(AuthContext);
@@ -14,7 +14,7 @@ const Register = () => {
 
         const userCreatedData = { name, email, password, role: "user" };
 
-        // createAccount(email, password)
+        createAccount(email, password)
         fetch("http://localhost:5000/user_create", {
             method: "POST",
             headers: {
@@ -30,6 +30,7 @@ const Register = () => {
                     text: "Your account has been created successfully!",
                     icon: "success"
                 });
+                Navigate("/login");
             })
             .catch(error => {
                 console.error("Error:", error.message);

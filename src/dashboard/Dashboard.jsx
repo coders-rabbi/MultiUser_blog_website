@@ -5,23 +5,23 @@ import { LuListTodo } from 'react-icons/lu';
 import { RiPassPendingLine } from 'react-icons/ri';
 import { Link, NavLink, Outlet } from 'react-router';
 import LastPost from '../Componenets/LatestPosts';
-import { FaBars } from 'react-icons/fa6';
+import { FaBars, FaUser } from 'react-icons/fa6';
 import { MdOutlineAttachMoney, MdOutlineDashboard, MdVerified } from 'react-icons/md';
 import { AiFillShopping } from 'react-icons/ai';
 import { FaHistory } from 'react-icons/fa';
 import { FiSettings } from 'react-icons/fi';
 import { AuthContext } from '../authProvider/AuthProvider';
 import { GiExitDoor } from 'react-icons/gi';
+import useUserData from '../hooks/useUserData';
 
 const Dashboard = () => {
 
     const { user, logOut } = useContext(AuthContext);
+    const { data: userInfo } = useUserData();
 
-    console.log("Dashboard User:", user);
+    const loggedUser = user?.email;
 
-    //temporary uses
-    const userInfo = null;
-    const profile = null;
+    const loggedUserData = userInfo?.find(u => u.email === loggedUser);
 
 
     const menuClass = ({ isActive }) =>
@@ -54,15 +54,17 @@ const Dashboard = () => {
                             {
                                 userInfo?.image ?
                                     <>
-                                        <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={userInfo?.image} alt="" />
+                                        <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={user?.image} alt="" />
                                     </>
                                     :
                                     <>
-                                        <img className="w-20 h-20 rounded-full border-2 border-white mx-auto" src={profile} alt="" />
+                                        {/* <img src={profile} alt="" /> */}
+                                        <FaUser className="w-20 h-20 rounded-full border-2 border-blue-500 mx-auto " />
+
                                     </>
                             }
-                            <h1 className="text-3xl text-center mt-3 font-semibold">{user?.email}</h1>
-                            <h4 className="text-xl font-semibold mt-4 flex gap-2 items-center justify-center">{userInfo?.role}<MdVerified className="text-success" /></h4>
+                            <h1 className="text-3xl text-center mt-3 font-semibold">{loggedUserData?.name}</h1>
+                            <h4 className="text-xl font-semibold mt-4 flex gap-2 items-center justify-center">{loggedUserData?.role}<MdVerified className="text-success" /></h4>
                         </div>
                         <div className="h-100vh font-pppins px-5 text-xl">
                             <div className="flex flex-col gap-2">
