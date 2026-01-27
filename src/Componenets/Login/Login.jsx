@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../authProvider/AuthProvider';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
 const Login = () => {
     const { login, googleLogin } = useContext(AuthContext);
@@ -20,7 +20,7 @@ const Login = () => {
                     text: "Login successful!",
                     icon: "success"
                 });
-                // Optional: useNavigate() to redirect user here
+                // useNavigate('./dashboard');
             })
             .catch((error) => {
                 Swal.fire({

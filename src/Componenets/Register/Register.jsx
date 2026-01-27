@@ -12,9 +12,19 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        createAccount(email, password)
-            .then(result => {
-                console.log("User Created:", result.user);
+        const userCreatedData = { name, email, password, role: "user" };
+
+        // createAccount(email, password)
+        fetch("http://localhost:5000/user_create", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userCreatedData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log("User Created:", data.user);
                 Swal.fire({
                     title: "Good job!",
                     text: "Your account has been created successfully!",
@@ -23,8 +33,8 @@ const Register = () => {
             })
             .catch(error => {
                 console.error("Error:", error.message);
-                alert(error.message);
             });
+
     }
 
     return (
