@@ -1,14 +1,21 @@
 import React from 'react';
 import { FaCloudUploadAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import usePosts from '../../hooks/useBlogData';
 
 const CreatePost = () => {
+    const { data: posts } = usePosts();
+
 
     const HandleCreatePost = event => {
         event.preventDefault();
         const form = event.target;
 
+        const totalPosts = posts?.length || 0;
+        const newId = totalPosts + 1;
+
         const formData = new FormData();
+        formData.append("id", newId);
         formData.append("blogImage", form.blogImage.files[0]);
         formData.append("title", form.blogTitle.value);
         formData.append("subTitle", form.subTitle.value);
