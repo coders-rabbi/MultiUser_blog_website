@@ -15,6 +15,7 @@ const SingleTableData = ({ post, refetch }) => {
     const loggedUserRole = loggedUserData?.role;
     // console.log(loggedUserRole);
 
+    //post status update handler
     const handlePostStatus = (status, _id) => {
         console.log(status, _id);
         const statusUpdate = { status };
@@ -36,6 +37,25 @@ const SingleTableData = ({ post, refetch }) => {
                 refetch();
             });
     };
+
+    //post delete handler
+    const handleDeletePost = (_id) => {
+        console.log("Delete post with id:", _id);
+        fetch(`http://localhost:5000/posts/delete/${_id}`, {
+            method: "DELETE"
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your post has been deleted.",
+                        icon: "success",
+                    });
+                }
+                refetch();
+            });
+    }
 
     return (
         <tr className="text-gray-500">
@@ -59,7 +79,7 @@ const SingleTableData = ({ post, refetch }) => {
                         </td>
                         :
                         <td className='text-[16px]'>
-                            <TiDelete className='text-red-400 w-10 h-10 rounded-full ' />
+                            <TiDelete onClick={() => handleDeletePost(_id)} className='text-red-400 w-10 h-10 rounded-full ' />
                         </td>
 
                 }
