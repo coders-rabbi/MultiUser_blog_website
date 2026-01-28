@@ -19,7 +19,7 @@ const SingleTableData = ({ post, refetch }) => {
     const handlePostStatus = (status, _id) => {
         console.log(status, _id);
         const statusUpdate = { status };
-        fetch(`http://localhost:5000/posts/update_status/${_id}`, {
+        fetch(`https://multi-user-blog-website-server.vercel.app/posts/update_status/${_id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(statusUpdate)
@@ -41,7 +41,7 @@ const SingleTableData = ({ post, refetch }) => {
     //post delete handler
     const handleDeletePost = (_id) => {
         console.log("Delete post with id:", _id);
-        fetch(`http://localhost:5000/posts/delete/${_id}`, {
+        fetch(`https://multi-user-blog-website-server.vercel.app/posts/delete/${_id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

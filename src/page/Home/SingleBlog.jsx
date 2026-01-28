@@ -6,7 +6,7 @@ const SingleBlog = ({ blogs }) => {
 
     const image = thumbnail
         ? thumbnail
-        : "`http://localhost:5000/uploads/${thumbnail}`";
+        : "`https://multi-user-blog-website-server.vercel.app/uploads/${thumbnail}`";
 
     return (
         <div>

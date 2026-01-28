@@ -15,7 +15,7 @@ const Register = () => {
         const userCreatedData = { name, email, password, role: "user" };
 
         createAccount(email, password)
-        fetch("http://localhost:5000/user_create", {
+        fetch("https://multi-user-blog-website-server.vercel.app/user_create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

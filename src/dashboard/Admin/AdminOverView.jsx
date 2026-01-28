@@ -5,8 +5,19 @@ import { LuListTodo } from 'react-icons/lu';
 import { GoCommentDiscussion } from 'react-icons/go';
 import { CgCloseR } from 'react-icons/cg';
 import { RiPassPendingLine } from 'react-icons/ri';
+import usePosts from '../../hooks/useBlogData';
 
 const AdminOverView = () => {
+    const { data: posts } = usePosts();
+
+    const pendingPosts = posts?.filter(post => post.status === "pending") || [];
+    const pendingPostsCount = pendingPosts.length;
+
+    const rejectPosts = posts?.filter(post => post.status === "reject") || [];
+    const rejectPostsCount = rejectPosts.length;
+
+    const totalPosts = posts?.length || 0;
+
     return (
         <div>
             <div className='grid grid-cols-4 gap-5'>
@@ -16,7 +27,7 @@ const AdminOverView = () => {
                         <LuListTodo className='text-3xl text-[#5F6FFF]' />
                         <div>
 
-                            <p>12</p>
+                            <p>{totalPosts}</p>
                             <button className='text-gray-400'>Posts</button>
                         </div>
                     </div>
@@ -27,7 +38,7 @@ const AdminOverView = () => {
                     <div className='shadow rounded p-8 flex items-center justify-center gap-5' id='Total_Post'>
                         <RiPassPendingLine className='text-3xl text-[#5F6FFF]' />
                         <div>
-                            <p>12</p>
+                            <p>{pendingPostsCount}</p>
                             <button className='text-gray-400'>Pending Post</button>
                         </div>
                     </div>
@@ -37,7 +48,7 @@ const AdminOverView = () => {
                     <div className='shadow rounded p-8 flex items-center justify-center gap-5' id='Total_Post'>
                         <CgCloseR className='text-3xl text-[#5F6FFF]' />
                         <div>
-                            <p>12</p>
+                            <p>{rejectPostsCount}</p>
                             <button className='text-gray-400'>Post Reject</button>
                         </div>
                     </div>
