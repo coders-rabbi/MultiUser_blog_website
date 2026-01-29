@@ -22,7 +22,7 @@ const CreatePost = () => {
         formData.append("excerpt", form.blogContent.value);
         formData.append("category", form.category.value);
 
-        fetch("https://multi-user-blog-website-server.vercel.app/posts", {
+        fetch("http://localhost:5000/posts", {
             method: "POST",
             body: formData
         })

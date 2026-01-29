@@ -6,7 +6,7 @@ import { MdDeleteForever } from 'react-icons/md';
 import { TiDelete } from 'react-icons/ti';
 
 const SingleTableData = ({ post, refetch }) => {
-    const { _id, category, title, thumbnail, excerpt, status, id } = post;
+    const { _id, category, title, thumbnail, publishedDate, status, id } = post;
     const { data: userInfo } = useUserData();
     const { user } = useContext(AuthContext);
 
@@ -61,7 +61,7 @@ const SingleTableData = ({ post, refetch }) => {
         <tr className="text-gray-500">
             <td>{id}</td>
             <td>{title}</td>
-            <td>12-05-2026</td>
+            <td>{publishedDate}</td>
             <td className='text-green-600 text-[16px]'>{status}</td>
             <div>
                 {

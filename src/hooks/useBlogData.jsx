@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 const fetchPosts = async () => {
-    const res = await fetch("https://multi-user-blog-website-server.vercel.app/posts");
+    const res = await fetch("http://localhost:5000/posts");
 
     if (!res.ok) {
         throw new Error("Failed to fetch posts");

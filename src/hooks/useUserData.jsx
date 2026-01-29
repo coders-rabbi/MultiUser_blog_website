@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 const fetchUser = async () => {
-    const res = await fetch("https://multi-user-blog-website-server.vercel.app/users");
+    const res = await fetch("http://localhost:5000/users");
 
     if (!res.ok) {
         throw new Error("Failed to fetch user");

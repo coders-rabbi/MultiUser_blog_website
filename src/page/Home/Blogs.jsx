@@ -12,7 +12,7 @@ const Blogs = () => {
     const { data, isLoading, refetch } = useQuery({
         queryKey: ["blogs"],
         queryFn: async () => {
-            const res = await fetch("https://multi-user-blog-website-server.vercel.app/posts");
+            const res = await fetch("http://localhost:5000/posts");
             return res.json();
         }
     });

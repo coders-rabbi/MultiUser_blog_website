@@ -10,6 +10,7 @@ import PendingPost from "../dashboard/PendingPost/PendingPost";
 import RejectPost from "../dashboard/RejectPost/RejectPost";
 import Login from "../Componenets/Login/Login";
 import Register from "../Componenets/Register/Register";
+import ViewBlog from "../page/ViewBlog/ViewBlog";
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path: "register",
                 Component: Register
+            },
+            {
+                path: "blog/:id",
+                Component: ViewBlog
             },
 
             //Admin Dashboard Routes
